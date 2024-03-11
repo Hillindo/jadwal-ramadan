@@ -19,12 +19,12 @@ import { useState } from 'react';
 export default function Page() {
     return (
     <Container fluid bg="#005E6A">
-      <Container pos="relative">
-        <Flex w="300px" ml={{xl:"900px", xs:"600px"}} align="center" c="red" direction="row-reverse">
-          <Image fit="contain" w={{xl:"300px", md:"100px", xs:"200px"}}src="/Petrokimia.png"/>
+      <Container pos={{base:"absolute", xl:"relative"}} pl={{base:"10px", sm:"20px", xs:"lg"}}>
+        <Flex w="100%" ml={{xl:"900px", xs:"600px"}} align="center" justify={{base: "center", xl:"right", md:"right", sm:"center", xs:"center"}}>
+            <Image fit="contain"  w={{base: "70%" ,xl:"300px", md:"100px", xs:"200px"}}src="/Petrokimia.png"/>
         </Flex>
       </Container>
-          <Grid pt="20px">
+          <Grid pt={{base:"2px", xl:"20px", lg:"20px"}}>
             <Grid.Col span={{base:12, md:6}}>
               <Container pt="110px" pb="10px" w={{xl:"50%", md:"50%", xs:"10%", sm:"10%", lg:"20%" }}>
                 <Image fit="contain" src="/masjid_petrokimia.webp"/>

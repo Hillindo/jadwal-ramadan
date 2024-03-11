@@ -17,12 +17,12 @@ export default function Home() {
     //   const [opened, { open, close }] = useDisclosure(false);
   return (
     <Container pos="relative">
-      <Flex justify="center" mt="40px" w={{base: "300px", md:"500px", sm:"200px", xs:"200px"}}>
-        <Grid gutter="xs">
+      <Flex justify="center" mt="40px" w={{base: "250px", md:"500px", sm:"200px", xs:"200px"}}>
+        <Grid>
             {days.map((day, index) => (
-            <div key={index} style={{ width: '70px', height: '70px', cursor: 'pointer', margin: '5px' }} onClick={() => handleImageClick(day)}>
-            <Image fit="fill" w={{base:"50px", xl:"100%", xs:"50px", sm:"50px", md:"50px"}} src={`/day-image/${day}.webp`} alt={day} style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
-            </div>
+            <Container w={{base:"40px", xl:"70px"}} style={{height: '70px', cursor: 'pointer'}} onClick={() => handleImageClick(day)}>
+            <Image fit="fill" w={{base:"40px", xl:"100%", xs:"50px", sm:"50px", md:"50px"}} src={`/day-image/${day}.webp`} alt={day}/>
+            </Container>
         ))}
         </Grid>
       </Flex>
