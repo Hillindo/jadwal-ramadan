@@ -42,13 +42,15 @@ export default function Page() {
               </Container>
             </Grid.Col>
             <Grid.Col span={{base:12, md:6}}>
-              <Flex pt={{ base: "20px", md: "50px" }} pb="10px" direction="column" align="center" w={{xl:"100%", xs:"50%"}}>
-                <Text ta="center" c="#FFD700" size="21px">
-                  Untuk Wilayah <b>DKI JAKARTA</b>, <b>MAKASSAR</b>, <br/>
-                  <b>JAYAPURA</b> (dan sekitarnya)
-                </Text>
-                <Time />
-              </Flex>  
+              <Container pos="relative">
+                <Flex pt={{ base: "20px", md: "50px" }} pb="10px" direction="column" align="center" w={{xl:"100%", xs:"50%"}}>
+                  <Text ta="center" c="#FFD700" size="21px">
+                    Untuk Wilayah <b>DKI JAKARTA</b>, <b>MAKASSAR</b>, <br/>
+                    <b>JAYAPURA</b> (dan sekitarnya)
+                  </Text>
+                  <Time />
+                </Flex>
+              </Container>  
             </Grid.Col>
           </Grid>
           <Flex

@@ -1,4 +1,4 @@
-import { Button, Grid, ThemeIcon, Badge, Modal, Paper, Container, Flex} from '@mantine/core';
+import { Button, Grid, ThemeIcon, Badge, Modal, Paper, Container, Flex, Image} from '@mantine/core';
 import {IconPhoto} from "@tabler/icons-react"
 import { useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
@@ -16,12 +16,12 @@ export default function Home() {
     console.log(typeof(days))
     //   const [opened, { open, close }] = useDisclosure(false);
   return (
-    <>
-      <Flex justify="center" mt="40px" w={{base: "500px", md:"500px", sm:"200px", xs:"200px"}}>
-        <Grid gutter="md" columns={1}>
+    <Container pos="relative">
+      <Flex justify="center" mt="40px">
+        <Grid gutter="xs" mr="0px">
             {days.map((day, index) => (
             <div key={index} style={{ width: '70px', height: '70px', cursor: 'pointer', margin: '5px' }} onClick={() => handleImageClick(day)}>
-            <img src={`/day-image/${day}.webp`} alt={day} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <Image fit="fill" w={{base:"50px", xl:"100%", xs:"50px", sm:"50px", md:"50px"}} src={`/day-image/${day}.webp`} alt={day} style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
             </div>
         ))}
         </Grid>
@@ -36,6 +36,6 @@ export default function Home() {
             )} */}
             </Modal>
         </Paper>
-    </>
+    </Container>
   );
 }
