@@ -20,33 +20,33 @@ export default function Page() {
     return (
     <Container fluid bg="#005E6A">
       <Container pos={{base:"absolute", xl:"relative"}} pl={{base:"10px", sm:"20px", xs:"lg"}}>
-        <Flex w="100%" ml={{xl:"25%",md:"25%", xs:"600px"}} align="center" justify={{base: "center", xl:"right", md:"right", sm:"center", xs:"center"}}>
-            <Image fit="contain"  w={{base: "70%" ,xl:"50%", md:"100px", xs:"200px"}}src="/Petrokimia.png"/>
+        <Flex w="100%" ml={{xl:"10%",md:"25%", lg:"0%", xs:"100px"}} align="center" justify={{base: "center", xl:"right", md:"right", sm:"center", xs:"center", lg:"right"}}>
+            <Image fit="contain"  w={{base: "70%" ,xl:"50%", md:"35%", lg:"30%", xs:"25%"}}src="/Petrokimia.png"/>
         </Flex>
       </Container>
-          <Grid pt={{base:"2px", xl:"20px", lg:"20px"}}>
-            <Grid.Col span={{base:12, md:6}}>
-              <Container pt={{xl:"5px"}} ml={{xl:"55%"}} pb="10px" w={{xl:"50%", md:"50%", xs:"10%", sm:"10%", lg:"20%" }}>
-                <Image fit="contain" mt={{base:"40%", xl:"0%"}} w={{xl:"120%", base:"90%"}} src="/masjid_petrokimia.webp"/>
+          <Grid pt={{base:"2px", md:"100px", xl:"20px", lg:"180px"}}>
+            <Grid.Col span={{base:12, xl:4, md:6}}>
+              <Container pt={{xl:"5px", lg:"0px"}} ml={{xl:"55%", base:"15%"}} pb="10px" w={{xl:"50%", md:"50%", xs:"10%", sm:"10%", lg:"20%" }}>
+                <Image fit="contain" mt={{base:"40%", xl:"0%"}} w={{lg:"400%",xl:"120%", base:"80%"}} src="/masjid_petrokimia.webp"/>
               </Container>
-              <Container mt="10px" ml={{xl:"70%", base:"0%"}}>
-                <Text c="#FFD700" ta="center" fw={300} fz={{base:"12pt", xl:"18pt"}}>
+              <Container mt="10px" ml={{xl:"50%", base:"0%"}}>
+                <Text c="#FFD700" ta="center" fw={300} fz={{base:"12pt", xl:"18pt", lg:"20pt"}} ml={{base:"0%",lg:"40%", xl:"0%"}}>
                   Masjid Petrokimia
                 </Text>
               </Container>
-              <Container mt="80px" ml={{xl:"70%"}}>
-                <Text c="#FFD700" ta="center" fw={700} size="28px">
+              <Container mt="80px" ml={{xl:"35%"}} w="100%">
+                <Text c="#FFD700" ta="center" ml={{base:"0%",lg:"40%", xl:"0%"}} fw={700} fz={{xl:"28px", base:"15px", lg:"20pt"}}>
                   Jadwal Imsakiyah <br/>
                 </Text>
-                <Text pt={{xl:"10%"}}c="#FFD700" ta="center" fw={300} size="28px">
+                <Text pt={{xl:"10%"}}c="#FFD700" ta="center" ml={{base:"0%",lg:"40%", xl:"0%"}} fw={300} fz={{xl:"28px", base:"15px", lg:"20pt"}}>
                   Ramadan 1445H
                 </Text>
               </Container>
             </Grid.Col>
-            <Grid.Col span={{base:12, md:6}}>
+            <Grid.Col span={{base:12, md:6, xl:8}}>
               <Container pos="relative">
-                <Flex pt={{ base: "20px", md: "50px" }} pb="10px" direction="column" align="center" w={{xl:"100%", xs:"50%"}}>
-                  <Text ta="center" c="#FFD700" size="21px">
+                <Flex pt={{ base: "10px", xl: "50px", lg:"5px" }} pb="10px" direction="column" align="center" w={{xl:"100%", xs:"100%", lg:"50%"}}>
+                  <Text ml={{lg:"10%", xl:"3%"}} ta="center" c="#FFD700" fz={{xl:"21px", base:"15px"}}>
                     Untuk Wilayah <b>DKI JAKARTA</b>, <b>MAKASSAR</b>, <br/>
                     <b>JAYAPURA</b> (dan sekitarnya)
                   </Text>
