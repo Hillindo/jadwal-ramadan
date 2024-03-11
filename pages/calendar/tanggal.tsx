@@ -6,7 +6,7 @@ import Detail from './detail';
 
 
 export default function Home() {
-    const days: string[] = Array.from({ length: 30 }, (_, index) => `day-${index + 1}`); // Buat array nama-nama gambar
+    const days = Array.from({ length: 30 }, (_, index) => `day-${index + 1}`); // Buat array nama-nama gambar
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState([]);
     const handleImageClick = (days: []) => {
