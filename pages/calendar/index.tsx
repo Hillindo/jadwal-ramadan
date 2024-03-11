@@ -20,8 +20,8 @@ export default function Page() {
     return (
     <Container fluid bg="#005E6A">
       <Container pos="relative">
-        <Flex w="300px" ml="800px" align="center" c="red" direction="row-reverse">
-          <Image src="/Petrokimia.png"/>
+        <Flex w="300px" ml={{xl:"900px", xs:"600px"}} align="center" c="red" direction="row-reverse">
+          <Image fit="contain" w={{xl:"300px", md:"100px", xs:"200px"}}src="/Petrokimia.png"/>
         </Flex>
       </Container>
           <Grid pt="20px">
