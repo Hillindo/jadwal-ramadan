@@ -2,8 +2,8 @@ import { useDisclosure } from '@mantine/hooks';
 import React from 'react';
 import { Modal, Button, Grid, Container, Image, Text, Flex, Box, Paper, Group } from '@mantine/core';
 
-export default function Demo({data}) {
-    const number = data.split('-')[1]; 
+export default function Demo({marin1}) {
+    const number = marin1.split('-')[1]; 
     const page = parseInt(number);
     const dayImage = [
       "/day-detail/day-1.webp", "/day-detail/day-2.webp", "/day-detail/day-3.webp",
