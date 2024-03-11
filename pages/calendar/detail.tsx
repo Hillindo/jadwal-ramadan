@@ -66,8 +66,8 @@ export default function Demo({data} : {data : string}) {
               </Container>  */}
               <Container pb="10px" mt="10px">
               <Text ta="center" c="#FFD700">
-                Untuk Wilayah <b>DKI JAKARTA</b>, <b>MAKASSAR</b>, <br/>
-                <b>JAYAPURA</b> (dan sekitarnya)
+                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <br/>
+                (dan sekitarnya)
               </Text>
             </Container>
             <Container mt="10px">
