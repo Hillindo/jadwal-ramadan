@@ -91,10 +91,10 @@ export default function Demo({data} : {data : string}) {
       direction={{base:'column', sm:'row'}}>
       <Container w="100%">
         <Flex direction="row">
-        <Image fit="contain" w="30px" c="white"src="/instagram.png"/>
+        <a href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr"><Image fit="contain" w="30px" c="white"src="/instagram.png"/></a>
         <Text ml="10px" mt="4px" c="white" ta="center"> Petrokimia</Text>
-        <Image fit="contain" w="30px" ml="15px" src="/twitter.png" />
-        <Text ml="10px" mt="5px" c="white" ta="center"> Petrokimia</Text>
+        <a href="www.petrokimia-gresik.com"><Image fit="contain" w="30px" ml="15px" src="/browser.png" /></a>
+        <a href="www.petrokimia-gresik.com"><Text ml="10px" mt="5px" c="white" ta="center"> www.petrokimia-gresik.com </Text></a>
         </Flex>
       </Container>
       </Flex>
