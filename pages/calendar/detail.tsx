@@ -34,8 +34,12 @@ export default function Demo({data} : {data : string}) {
     return (
 
     <Container style={{backgroundColor:"#005E6A"}} fluid>
-      <Container pos="relative" ml={{xl:"37%", lg:"30%", base:"10%"}} mt={{base:"5%", lg:"0%", xl:"0%"}}>
-          <Image fit="contain" w={{xl:"40%", lg:"40%", base:"90%"}} src="/Petrokimia.png"/>
+      <Container pos="relative" ml={{xl:"30%", lg:"25%", base:"10%"}} mt={{base:"0%", lg:"0%", xl:"0%"}}>
+        <Flex gap={{base:"3%"}} align="center" justify={{base: "center", xl:"left", md:"right", sm:"center", xs:"center", lg:"left"}}>
+          <Image fit="contain" mt={{base:"5%", xl:"5%", lg:"3%"}} w={{base: "30%" ,xl:"23%", md:"35%", lg:"20%", xs:"25%"}}w={{base: "30%" ,xl:"25%", md:"35%", lg:"20%", xs:"25%"}}src="/bumn.png"/>
+          <Image fit="contain" mt={{base:"5%", xl:"5%", lg:"3%"}} w={{base: "30%" ,xl:"23%", md:"35%", lg:"20%", xs:"25%"}} src="/Petrokimia.png"/>
+          <Image fit="contain" mt={{base:"5%", xl:"5%", lg:"3%"}} w={{base: "30%" ,xl:"23%", md:"35%", lg:"20%", xs:"25%"}}src="/pi.png"/> 
+          </Flex>
       </Container>
       <Container w="100%">
         <Grid pt="20px">

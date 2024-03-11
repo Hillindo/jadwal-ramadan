@@ -20,8 +20,10 @@ export default function Page() {
     return (
     <Container fluid bg="#005E6A">
       <Container pos={{base:"absolute", xl:"relative"}} pl={{base:"10px", sm:"20px", xs:"lg"}}>
-        <Flex w="100%" ml={{xl:"10%",md:"25%", lg:"0%", xs:"100px"}} align="center" justify={{base: "center", xl:"right", md:"right", sm:"center", xs:"center", lg:"right"}}>
-            <Image fit="contain" w={{base: "70%" ,xl:"50%", md:"35%", lg:"30%", xs:"25%"}}src="/Petrokimia.png"/>
+        <Flex gap={{base:"3%"}} mt={{base:"7%", lg:"3%", xl:"0%"}} w="100%" ml={{xl:"0%",md:"25%", lg:"10%", xs:"100px"}} align="center" justify={{base: "center", xl:"center", md:"right", sm:"center", xs:"center", lg:"center"}}>
+            <Image fit="contain" mt={{base:"0%", xl:"5%"}} w={{base: "30%" ,xl:"25%", md:"35%", lg:"20%", xs:"25%"}}src="/bumn.png"/>
+            <Image fit="contain" mt={{base:"0%", xl:"5%"}} w={{base: "30%" ,xl:"25%", md:"35%", lg:"20%", xs:"25%"}}src="/Petrokimia.png"/>
+            <Image fit="contain" mt={{base:"0%", xl:"5%"}} w={{base: "30%" ,xl:"25%", md:"35%", lg:"20%", xs:"25%"}}src="/pi.png"/> 
         </Flex>
       </Container>
           <Grid pt={{base:"2px", md:"100px", xl:"20px", lg:"180px"}}>
