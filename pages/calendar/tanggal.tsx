@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <Container pos="static">
       <Flex justify="center" mt="40px" w={{base: "270px", md:"450px", sm:"200px", xs:"200px"}}>
-        <Grid>
+        <Grid pos="relative">
             {days.map((day, index) => (
             <Container w={{base:"45px", xl:"70px"}} style={{height: '70px', cursor: 'pointer'}} onClick={() => handleImageClick(day)}>
             <Image fit="cover" w={{base:"40px", xl:"70px", xs:"50px", sm:"50px", md:"50px", lg:"40px"}} src={`/day-image/${day}.webp`} alt={day}/>
