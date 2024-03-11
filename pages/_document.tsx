@@ -1,0 +1,13 @@
+import { Html, Head, Main, NextScript, Meta } from "next/document";
+
+export default function Document() {
+  return (
+    <Html>
+      <Head />
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
