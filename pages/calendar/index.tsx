@@ -58,11 +58,11 @@ export default function Page() {
       justify={{sm: 'center'}}
       gap={{base:'sm', sm:'lg'}}
       direction={{base:'column', sm:'row'}}>
-      <Container w="160px">
-        <Flex direction="row">
-        <Image fit="contain" w="30px" c="white"src="/instagram.png"/>
+      <Container w="100%">
+        <Flex direction="row" justify="center">
+        <Image fit="contain" w={{base:"20px", xl:"30px"}} c="white"src="/instagram.png"/>
         <Text ml="10px" mt="4px" c="white" ta="center"> Petrokimia</Text>
-        <Image fit="contain" w="30px" ml="15px" src="/twitter.png" />
+        <Image fit="contain" w={{base:"20px", xl:"30px"}} ml="15px" src="/twitter.png" />
         <Text ml="10px" mt="5px" c="white" ta="center"> Petrokimia</Text>
         </Flex>
       </Container>

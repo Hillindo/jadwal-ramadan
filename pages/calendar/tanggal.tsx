@@ -16,12 +16,12 @@ export default function Home() {
     console.log(typeof(days))
     //   const [opened, { open, close }] = useDisclosure(false);
   return (
-    <Container pos="relative">
-      <Flex justify="center" mt="40px" w={{base: "250px", md:"500px", sm:"200px", xs:"200px"}}>
+    <Container pos="static">
+      <Flex justify="center" mt="40px" w={{base: "270px", md:"450px", sm:"200px", xs:"200px"}}>
         <Grid>
             {days.map((day, index) => (
-            <Container w={{base:"40px", xl:"70px"}} style={{height: '70px', cursor: 'pointer'}} onClick={() => handleImageClick(day)}>
-            <Image fit="fill" w={{base:"40px", xl:"100%", xs:"50px", sm:"50px", md:"50px"}} src={`/day-image/${day}.webp`} alt={day}/>
+            <Container w={{base:"45px", xl:"70px"}} style={{height: '70px', cursor: 'pointer'}} onClick={() => handleImageClick(day)}>
+            <Image fit="cover" w={{base:"40px", xl:"70px", xs:"50px", sm:"50px", md:"50px", lg:"40px"}} src={`/day-image/${day}.webp`} alt={day}/>
             </Container>
         ))}
         </Grid>
