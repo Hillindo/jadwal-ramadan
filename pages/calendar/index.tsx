@@ -21,24 +21,24 @@ export default function Page() {
     <Container fluid bg="#005E6A">
       <Container pos={{base:"absolute", xl:"relative"}} pl={{base:"10px", sm:"20px", xs:"lg"}}>
         <Flex w="100%" ml={{xl:"10%",md:"25%", lg:"0%", xs:"100px"}} align="center" justify={{base: "center", xl:"right", md:"right", sm:"center", xs:"center", lg:"right"}}>
-            <Image fit="contain"  w={{base: "70%" ,xl:"50%", md:"35%", lg:"30%", xs:"25%"}}src="/Petrokimia.png"/>
+            <Image fit="contain" w={{base: "70%" ,xl:"50%", md:"35%", lg:"30%", xs:"25%"}}src="/Petrokimia.png"/>
         </Flex>
       </Container>
           <Grid pt={{base:"2px", md:"100px", xl:"20px", lg:"180px"}}>
             <Grid.Col span={{base:12, xl:4, md:6}}>
               <Container pt={{xl:"5px", lg:"0px"}} ml={{xl:"55%", base:"15%"}} pb="10px" w={{xl:"50%", md:"50%", xs:"10%", sm:"10%", lg:"20%" }}>
-                <Image fit="contain" mt={{base:"40%", xl:"0%"}} w={{lg:"400%",xl:"120%", base:"80%"}} src="/masjid_petrokimia.webp"/>
+                <Image fit="contain" mt={{base:"40%", xl:"20%"}} w={{lg:"400%",xl:"120%", base:"80%"}} src="/masjid_petrokimia.webp"/>
               </Container>
-              <Container mt="10px" ml={{xl:"50%", base:"0%"}}>
+              <Container mt="10px" ml={{xl:"50%", base:"0%"}} mr={{xl:"0%", lg:"30%", base:"0%"}}>
                 <Text c="#FFD700" ta="center" fw={300} fz={{base:"12pt", xl:"18pt", lg:"20pt"}} ml={{base:"0%",lg:"40%", xl:"0%"}}>
                   Masjid Petrokimia
                 </Text>
               </Container>
-              <Container mt="80px" ml={{xl:"35%"}} w="100%">
-                <Text c="#FFD700" ta="center" ml={{base:"0%",lg:"40%", xl:"0%"}} fw={700} fz={{xl:"28px", base:"15px", lg:"20pt"}}>
+              <Container mt="80px" ml={{xl:"35%", lg:"0%", base:"0%"}} w="100%">
+                <Text c="#FFD700" ta="left" ml={{base:"30%",lg:"30%", xl:"30%"}} fw={700} fz={{xl:"28px", base:"15px", lg:"20pt"}}>
                   Jadwal Imsakiyah <br/>
                 </Text>
-                <Text pt={{xl:"10%"}}c="#FFD700" ta="center" ml={{base:"0%",lg:"40%", xl:"0%"}} fw={300} fz={{xl:"28px", base:"15px", lg:"20pt"}}>
+                <Text pt={{xl:"2%", base:"0%", lg:"2%"}}c="#FFD700" ta="left" ml={{base:"30%",lg:"30%", xl:"32%"}} fw={300} fz={{xl:"28px", base:"15px", lg:"20pt"}}>
                   Ramadan 1445H
                 </Text>
               </Container>
@@ -69,9 +69,9 @@ export default function Page() {
         </Flex>
       </Container>
       </Flex>
-      <div style={{marginTop:"35px"}}><br/>
+      <Container mt={{xl:"4%", lg:"3%"}}><br/>
 
-      </div>
+      </Container>
       </Container>
     );
   }
