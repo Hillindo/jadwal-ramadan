@@ -9,10 +9,11 @@ export default function Home() {
     const days: string[] = Array.from({ length: 30 }, (_, index) => `day-${index + 1}`); // Buat array nama-nama gambar
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState([]);
-    const handleImageClick = (days : string[] | undefined) => {
+    const handleImageClick = (days: []) => {
         setSelectedImage(days);
         setModalOpen(true);
       };
+    console.log(typeof(days))
     //   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
