@@ -2,7 +2,7 @@ import { useDisclosure } from '@mantine/hooks';
 import React from 'react';
 import { Modal, Button, Grid, Container, Image, Text, Flex, Box, Paper, Group } from '@mantine/core';
 
-export default function Demo({marin1}) {
+export default function Demo({marin1}: {marin1: string}) {
     const number = marin1.split('-')[1]; 
     const page = parseInt(number);
     const dayImage = [
