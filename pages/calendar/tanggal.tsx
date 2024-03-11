@@ -10,7 +10,7 @@ export default function Home() {
     const days = Array.from({ length: 30 }, (_, index) => `day-${index + 1}`); // Buat array nama-nama gambar
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
-    const handleImageClick = (day) => {
+    const handleImageClick = (day: {day: string}) => {
         setSelectedImage(day);
         setModalOpen(true);
       };
