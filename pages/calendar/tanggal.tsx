@@ -4,22 +4,14 @@ import { useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import Detail from './detail';
 
-const days = Array.from({ length: 30 }, (_, index) => `day-${index + 1}`); // Buat array nama-nama gambar
 
 export default function Home() {
-    const days = Array.from({ length: 30 }, (_, index) => `day-${index + 1}`); // Buat array nama-nama gambar
+    const days: string[] = Array.from({ length: 30 }, (_, index) => `day-${index + 1}`); // Buat array nama-nama gambar
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
-    const handleImageClick = (day) => {
-        const imagePath = `/day-image/${day}.webp`;
-        const imageExists = days.includes(day);
-        if (imageExists){
-        setSelectedImage(day);
+    const handleImageClick = (days) => {
+        setSelectedImage(days);
         setModalOpen(true);
-        } else {
-          console.error(`Image not found: ${imagePath}`);
-          // Tampilkan pesan kesalahan atau lakukan tindakan lain yang sesuai
-      }
       };
     //   const [opened, { open, close }] = useDisclosure(false);
   return (
