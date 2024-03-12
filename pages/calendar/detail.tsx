@@ -1,58 +1,180 @@
-import { useDisclosure } from '@mantine/hooks';
-import React from 'react';
-import { Modal, Button, Grid, Container, Image, Text, Flex, Box, Paper, Group } from '@mantine/core';
+import { useDisclosure } from "@mantine/hooks";
+import React, { useEffect, useState } from "react";
+import {
+  Modal,
+  Button,
+  Grid,
+  Container,
+  Image,
+  Text,
+  Flex,
+  Box,
+  Paper,
+  Group,
+} from "@mantine/core";
+import { fetchDataCombined } from "./api";
+import dayjs from "dayjs";
 
-export default function Demo({data} : {data : string}) {
-    const number = data.split('-')[1]; 
-    const page = parseInt(number);
-    const dayImage = [
-      "/day-detail/day-1.webp", "/day-detail/day-2.webp", "/day-detail/day-3.webp",
-      "/day-detail/day-4.webp", "/day-detail/day-5.webp", "/day-detail/day-6.webp",
-      "/day-detail/day-7.webp", "/day-detail/day-8.webp", "/day-detail/day-9.webp",
-      "/day-detail/day-10.webp", "/day-detail/day-11.webp", "/day-detail/day-12.webp",
-      "/day-detail/day-13.webp", "/day-detail/day-14.webp", "/day-detail/day-15.webp",
-      "/day-detail/day-16.webp", "/day-detail/day-17.webp", "/day-detail/day-18.webp",
-      "/day-detail/day-19.webp", "/day-detail/day-20.webp", "/day-detail/day-21.webp",
-      "/day-detail/day-22.webp", "/day-detail/day-23.webp", "/day-detail/day-24.webp",
-      "/day-detail/day-25.webp", "/day-detail/day-26.webp", "/day-detail/day-27.webp",
-      "/day-detail/day-28.webp", "/day-detail/day-29.webp", "/day-detail/day-30.webp"
-    ]
-    const scheduleImage = [
-      "/day-detail/jadwal-1.webp", "/day-detail/jadwal-2.webp", "/day-detail/jadwal-3.webp",
-      "/day-detail/jadwal-4.webp", "/day-detail/jadwal-5.webp", "/day-detail/jadwal-6.webp",
-      "/day-detail/jadwal-7.webp", "/day-detail/jadwal-8.webp", "/day-detail/jadwal-9.webp",
-      "/day-detail/jadwal-10.webp", "/day-detail/jadwal-11.webp", "/day-detail/jadwal-12.webp",
-      "/day-detail/jadwal-13.webp", "/day-detail/jadwal-14.webp", "/day-detail/jadwal-15.webp",
-      "/day-detail/jadwal-16.webp", "/day-detail/jadwal-17.webp", "/day-detail/jadwal-18.webp",
-      "/day-detail/jadwal-19.webp", "/day-detail/jadwal-20.webp", "/day-detail/jadwal-21.webp",
-      "/day-detail/jadwal-22.webp", "/day-detail/jadwal-23.webp", "/day-detail/jadwal-24.webp",
-      "/day-detail/jadwal-25.webp", "/day-detail/jadwal-26.webp", "/day-detail/jadwal-27.webp",
-      "/day-detail/jadwal-28.webp", "/day-detail/jadwal-29.webp", "/day-detail/jadwal-30.webp",
-    ]
-    const selectedDayImage = dayImage[Math.min(Math.max(page - 1, 0), dayImage.length - 1)];
-    const selectedScheduleImage = scheduleImage[Math.min(Math.max(page - 1, 0), scheduleImage.length - 1)];
-    return (
+export default function Demo({ data }: { data: string }) {
+  const number = data.split("-")[1];
+  const dataKota = ["Jakarta", "Surabaya", "Gersik", "Jawa Timur"];
+  const formatGoogleCalendarDateTime = (dateTime: string) => {
+    const formattedDateTime = dateTime.replace(/[-: ]/g, "");
+    return `${formattedDateTime}00`;
+  };
+  const handleClick = (kota, time, desc, date = null) => {
+    const startDate = date.split(" ")[0]; // Ambil tanggal dari date
+    const startTime = formatGoogleCalendarDateTime(startDate + "T" + time);
+    const endTime = formatGoogleCalendarDateTime(startDate + "T" + time);
+    const eventUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      desc
+    )}&dates=${encodeURIComponent(
+      startTime + "/" + endTime
+    )}&location=${encodeURIComponent(kota)}`;
 
-    <Container style={{backgroundColor:"#005E6A"}} fluid>
-      <Container pos="relative" ml={{xl:"30%", lg:"25%", base:"10%"}} mt={{base:"0%", lg:"0%", xl:"0%"}}>
-        <Flex gap={{base:"3%"}} align="center" justify={{base: "center", xl:"left", md:"right", sm:"center", xs:"center", lg:"left"}}>
-          <Image fit="contain" mt={{base:"5%", xl:"5%", lg:"3%"}} w={{base: "30%" ,xl:"23%", md:"35%", lg:"20%", xs:"25%"}}w={{base: "30%" ,xl:"25%", md:"35%", lg:"20%", xs:"25%"}}src="/bumn.png"/>
-          <Image fit="contain" mt={{base:"5%", xl:"5%", lg:"3%"}} w={{base: "30%" ,xl:"23%", md:"35%", lg:"20%", xs:"25%"}} src="/Petrokimia.png"/>
-          <Image fit="contain" mt={{base:"5%", xl:"5%", lg:"3%"}} w={{base: "30%" ,xl:"23%", md:"35%", lg:"20%", xs:"25%"}}src="/pi.png"/> 
-          </Flex>
+    window.open(eventUrl, "_blank");
+    console.log(kota, time, desc);
+  };
+  const [datas, setDats] = useState([]);
+  useEffect(() => {
+    fetchDataCombined().then((resource) => {
+      setDats(resource);
+      // console.log(
+      //   datas[0]
+      // );
+    });
+  }, []);
+  const page = parseInt(number);
+  const dayImage = [
+    "/day-detail/day-1.webp",
+    "/day-detail/day-2.webp",
+    "/day-detail/day-3.webp",
+    "/day-detail/day-4.webp",
+    "/day-detail/day-5.webp",
+    "/day-detail/day-6.webp",
+    "/day-detail/day-7.webp",
+    "/day-detail/day-8.webp",
+    "/day-detail/day-9.webp",
+    "/day-detail/day-10.webp",
+    "/day-detail/day-11.webp",
+    "/day-detail/day-12.webp",
+    "/day-detail/day-13.webp",
+    "/day-detail/day-14.webp",
+    "/day-detail/day-15.webp",
+    "/day-detail/day-16.webp",
+    "/day-detail/day-17.webp",
+    "/day-detail/day-18.webp",
+    "/day-detail/day-19.webp",
+    "/day-detail/day-20.webp",
+    "/day-detail/day-21.webp",
+    "/day-detail/day-22.webp",
+    "/day-detail/day-23.webp",
+    "/day-detail/day-24.webp",
+    "/day-detail/day-25.webp",
+    "/day-detail/day-26.webp",
+    "/day-detail/day-27.webp",
+    "/day-detail/day-28.webp",
+    "/day-detail/day-29.webp",
+    "/day-detail/day-30.webp",
+  ];
+  const scheduleImage = [
+    "/day-detail/jadwal-1.webp",
+    "/day-detail/jadwal-2.webp",
+    "/day-detail/jadwal-3.webp",
+    "/day-detail/jadwal-4.webp",
+    "/day-detail/jadwal-5.webp",
+    "/day-detail/jadwal-6.webp",
+    "/day-detail/jadwal-7.webp",
+    "/day-detail/jadwal-8.webp",
+    "/day-detail/jadwal-9.webp",
+    "/day-detail/jadwal-10.webp",
+    "/day-detail/jadwal-11.webp",
+    "/day-detail/jadwal-12.webp",
+    "/day-detail/jadwal-13.webp",
+    "/day-detail/jadwal-14.webp",
+    "/day-detail/jadwal-15.webp",
+    "/day-detail/jadwal-16.webp",
+    "/day-detail/jadwal-17.webp",
+    "/day-detail/jadwal-18.webp",
+    "/day-detail/jadwal-19.webp",
+    "/day-detail/jadwal-20.webp",
+    "/day-detail/jadwal-21.webp",
+    "/day-detail/jadwal-22.webp",
+    "/day-detail/jadwal-23.webp",
+    "/day-detail/jadwal-24.webp",
+    "/day-detail/jadwal-25.webp",
+    "/day-detail/jadwal-26.webp",
+    "/day-detail/jadwal-27.webp",
+    "/day-detail/jadwal-28.webp",
+    "/day-detail/jadwal-29.webp",
+    "/day-detail/jadwal-30.webp",
+  ];
+  const selectedDayImage =
+    dayImage[Math.min(Math.max(page - 1, 0), dayImage.length - 1)];
+  const selectedScheduleImage =
+    scheduleImage[Math.min(Math.max(page - 1, 0), scheduleImage.length - 1)];
+  return (
+    <Container style={{ backgroundColor: "#005E6A" }} fluid>
+      <Container
+        pos="relative"
+        ml={{ xl: "30%", lg: "25%", base: "10%" }}
+        mt={{ base: "0%", lg: "0%", xl: "0%" }}
+      >
+        <Flex
+          gap={{ base: "3%" }}
+          align="center"
+          justify={{
+            base: "center",
+            xl: "left",
+            md: "right",
+            sm: "center",
+            xs: "center",
+            lg: "left",
+          }}
+        >
+          <Image
+            fit="contain"
+            mt={{ base: "5%", xl: "5%", lg: "3%" }}
+            w={{ base: "30%", xl: "23%", md: "35%", lg: "20%", xs: "25%" }}
+            w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%" }}
+            src="/bumn.png"
+          />
+          <Image
+            fit="contain"
+            mt={{ base: "5%", xl: "5%", lg: "3%" }}
+            w={{ base: "30%", xl: "23%", md: "35%", lg: "20%", xs: "25%" }}
+            src="/Petrokimia.png"
+          />
+          <Image
+            fit="contain"
+            mt={{ base: "5%", xl: "5%", lg: "3%" }}
+            w={{ base: "30%", xl: "23%", md: "35%", lg: "20%", xs: "25%" }}
+            src="/pi.png"
+          />
+        </Flex>
       </Container>
       <Container w="100%">
         <Grid pt="20px">
-          <Grid.Col span={{xl:6, lg:6, base:12}}>
-              <Container mt={{xl:"30%", lg:"30%", base:"5%"}} mr={{xl:"20%", lg:"20%"}} ml={{base:"15%", xl:"0%", lg:"0%"}}>
-              <Image w={{base:"0px", xl:"110%", lg:"100%"}}src="/masjid_petrokimia.webp"/>
-              </Container>
+          <Grid.Col span={{ xl: 6, lg: 6, base: 12 }}>
+            <Container
+              mt={{ xl: "30%", lg: "30%", base: "5%" }}
+              mr={{ xl: "20%", lg: "20%" }}
+              ml={{ base: "15%", xl: "0%", lg: "0%" }}
+            >
+              <Image
+                w={{ base: "0px", xl: "110%", lg: "100%" }}
+                src="/masjid_petrokimia.webp"
+              />
+            </Container>
           </Grid.Col>
-          <Grid.Col span={{xl:6, lg:6, base:12}}>
-              <Container ml={{xl:"17%", lg:"15%", base:"5%"}} >
-                  <Image w={{xl:"80%", lg:"75%", base:"95%"}}src={selectedDayImage} />
-              </Container> 
-              {/* <Container mt="12px">
+          <Grid.Col span={{ xl: 6, lg: 6, base: 12 }}>
+            <Container ml={{ xl: "17%", lg: "15%", base: "5%" }}>
+              <Image
+                w={{ xl: "80%", lg: "75%", base: "95%" }}
+                src={selectedDayImage}
+              />
+            </Container>
+            {/* <Container mt="12px">
                   <Flex direction="row" justify="center" gap="15px">
                       <Group bg="green">
                           <Box size="10px">
@@ -64,43 +186,393 @@ export default function Demo({data} : {data : string}) {
                       </Group>
                   </Flex>        
               </Container>  */}
-              <Container pb="10px" mt="10px">
+            <Container pb="10px" mt="10px">
               <Text ta="center" c="#FFD700">
-                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <br/>
+                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <br />
                 (dan sekitarnya)
               </Text>
             </Container>
             <Container mt="10px">
-              <Flex justify="center"> 
-                <Image w="350px" src={selectedScheduleImage} />
+              <Flex justify="center" direction={"column"}>
+                <div
+                  style={{ display: "flex", borderBottom: "3px solid yellow" }}
+                >
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      borderRadius: "11px 11px 2px 2px",
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      borderRadius: "15px 15px 0 0",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Jakarta
+                  </div>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      borderRadius: "15px 15px 0 0",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Surabaya
+                  </div>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      borderRadius: "15px 15px 0 0",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Gersik
+                  </div>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      borderRadius: "15px 15px 0 0",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Jawa Timur
+                  </div>
+                </div>
+                <div style={{ display: "flex" }}>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Imsak
+                  </div>
+                  {datas.map((item, index) => (
+                    <div
+                      style={{
+                        cursor: "pointer",
+                        width: "100px",
+                        height: "45px",
+                        backgroundColor: "red",
+                      }}
+                      onClick={() => {
+                        handleClick(
+                          dataKota[index],
+                          item.find(
+                            (data) =>
+                              data.date ==
+                              dayjs("2024-03-12")
+                                .add(number - 1, "days")
+                                .format("YYYY-MM-DD")
+                          )?.imsak,
+                          "imsak",
+                          dayjs("2024-03-12")
+                            .add(number - 1, "days")
+                            .format("YYYY-MM-DD")
+                        );
+                      }}
+                    >
+                      {
+                        item.find(
+                          (data) =>
+                            data.date ==
+                            dayjs("2024-03-12")
+                              .add(number - 1, "days")
+                              .format("YYYY-MM-DD")
+                        )?.imsak
+                      }
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: "flex" }}>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Subuh
+                  </div>
+                  {datas.map((item, index) => (
+                    <div
+                      style={{
+                        cursor: "pointer",
+                        width: "100px",
+                        height: "45px",
+                        backgroundColor: "red",
+                      }}
+                      onClick={() => {
+                        handleClick(
+                          dataKota[index],
+                          item.find(
+                            (data) =>
+                              data.date ==
+                              dayjs("2024-03-12")
+                                .add(number - 1, "days")
+                                .format("YYYY-MM-DD")
+                          )?.subuh,
+                          "subuh",
+                          dayjs("2024-03-12")
+                            .add(number - 1, "days")
+                            .format("YYYY-MM-DD")
+                        );
+                      }}
+                    >
+                      {
+                        item.find(
+                          (data) =>
+                            data.date ==
+                            dayjs("2024-03-12")
+                              .add(number - 1, "days")
+                              .format("YYYY-MM-DD")
+                        )?.subuh
+                      }
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: "flex" }}>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Dzuhur
+                  </div>
+                  {datas.map((item, index) => (
+                    <div
+                      style={{
+                        cursor: "pointer",
+                        width: "100px",
+                        height: "45px",
+                        backgroundColor: "red",
+                      }}
+                      onClick={() => {
+                        handleClick(
+                          dataKota[index],
+                          item.find(
+                            (data) =>
+                              data.date ==
+                              dayjs("2024-03-12")
+                                .add(number - 1, "days")
+                                .format("YYYY-MM-DD")
+                          )?.dzuhur,
+                          "dzuhur",
+                          dayjs("2024-03-12")
+                            .add(number - 1, "days")
+                            .format("YYYY-MM-DD")
+                        );
+                      }}
+                    >
+                      {
+                        item.find(
+                          (data) =>
+                            data.date ==
+                            dayjs("2024-03-12")
+                              .add(number - 1, "days")
+                              .format("YYYY-MM-DD")
+                        )?.dzuhur
+                      }
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: "flex" }}>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Ashar
+                  </div>
+                  {datas.map((item, index) => (
+                    <div
+                      style={{
+                        cursor: "pointer",
+                        width: "100px",
+                        height: "45px",
+                        backgroundColor: "red",
+                      }}
+                      onClick={() => {
+                        handleClick(
+                          dataKota[index],
+                          item.find(
+                            (data) =>
+                              data.date ==
+                              dayjs("2024-03-12")
+                                .add(number - 1, "days")
+                                .format("YYYY-MM-DD")
+                          )?.ashar,
+                          "ashar",
+                          dayjs("2024-03-12")
+                            .add(number - 1, "days")
+                            .format("YYYY-MM-DD")
+                        );
+                      }}
+                    >
+                      {
+                        item.find(
+                          (data) =>
+                            data.date ==
+                            dayjs("2024-03-12")
+                              .add(number - 1, "days")
+                              .format("YYYY-MM-DD")
+                        )?.ashar
+                      }
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: "flex" }}>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Maghrib
+                  </div>
+                  {datas.map((item, index) => (
+                    <div
+                      style={{
+                        cursor: "pointer",
+                        width: "100px",
+                        height: "45px",
+                        backgroundColor: "red",
+                      }}
+                      onClick={() => {
+                        handleClick(
+                          dataKota[index],
+                          item.find(
+                            (data) =>
+                              data.date ==
+                              dayjs("2024-03-12")
+                                .add(number - 1, "days")
+                                .format("YYYY-MM-DD")
+                          )?.maghrib,
+                          "maghrib",
+                          dayjs("2024-03-12")
+                            .add(number - 1, "days")
+                            .format("YYYY-MM-DD")
+                        );
+                      }}
+                    >
+                      {
+                        item.find(
+                          (data) =>
+                            data.date ==
+                            dayjs("2024-03-12")
+                              .add(number - 1, "days")
+                              .format("YYYY-MM-DD")
+                        )?.maghrib
+                      }
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: "flex" }}>
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "45px",
+                      backgroundColor: "red",
+                      borderRadius: "0 0 15px 15px ",
+                    }}
+                  >
+                    Isya
+                  </div>
+                  {datas.map((item, index) => (
+                    <div
+                      style={{
+                        cursor: "pointer",
+                        width: "100px",
+                        height: "45px",
+                        backgroundColor: "red",
+                        borderRadius: "0 0 15px 15px ",
+                      }}
+                      onClick={() => {
+                        handleClick(
+                          dataKota[index],
+                          item.find(
+                            (data) =>
+                              data.date ==
+                              dayjs("2024-03-12")
+                                .add(number - 1, "days")
+                                .format("YYYY-MM-DD")
+                          )?.isya,
+                          "isya",
+                          dayjs("2024-03-12")
+                            .add(number - 1, "days")
+                            .format("YYYY-MM-DD")
+                        );
+                      }}
+                    >
+                      {
+                        item.find(
+                          (data) =>
+                            data.date ==
+                            dayjs("2024-03-12")
+                              .add(number - 1, "days")
+                              .format("YYYY-MM-DD")
+                        )?.isya
+                      }
+                    </div>
+                  ))}
+                </div>
+
+                {/* <Image w="350px" src={selectedScheduleImage} /> */}
               </Flex>
             </Container>
             <Container mt="5%">
               <Text c="#FFD700" ta="center">
-                  Sumber: SIHAT/KEMENAG (Kementerian Agama RI) <br/><br/>
-                  Petrokimia Gresik mengucapkan selamat menjalankan ibadah puasa
+                Sumber: SIHAT/KEMENAG (Kementerian Agama RI) <br />
+                <br />
+                Petrokimia Gresik mengucapkan selamat menjalankan ibadah puasa
               </Text>
             </Container>
           </Grid.Col>
         </Grid>
       </Container>
       <Flex
-      mt="50px" 
-      justify={{sm: 'center'}}
-      gap={{base:'sm', sm:'lg'}}
-      direction={{base:'column', sm:'row'}}>
-      <Container w="100%">
-        <Flex direction="row">
-        <a href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr"><Image fit="contain" w="30px" c="white"src="/instagram.png"/></a>
-        <Text ml="10px" mt="4px" c="white" ta="center"> Petrokimia</Text>
-        <a href="www.petrokimia-gresik.com"><Image fit="contain" w="30px" ml="15px" src="/browser.png" /></a>
-        <a href="www.petrokimia-gresik.com"><Text ml="10px" mt="5px" c="white" ta="center"> www.petrokimia-gresik.com </Text></a>
-        </Flex>
-      </Container>
+        mt="50px"
+        justify={{ sm: "center" }}
+        gap={{ base: "sm", sm: "lg" }}
+        direction={{ base: "column", sm: "row" }}
+      >
+        <Container w="100%">
+          <Flex direction="row">
+            <a href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr">
+              <Image fit="contain" w="30px" c="white" src="/instagram.png" />
+            </a>
+            <Text ml="10px" mt="4px" c="white" ta="center">
+              {" "}
+              Petrokimia
+            </Text>
+            <a href="www.petrokimia-gresik.com">
+              <Image fit="contain" w="30px" ml="15px" src="/browser.png" />
+            </a>
+            <a href="www.petrokimia-gresik.com">
+              <Text ml="10px" mt="5px" c="white" ta="center">
+                {" "}
+                www.petrokimia-gresik.com{" "}
+              </Text>
+            </a>
+          </Flex>
+        </Container>
       </Flex>
-      <div style={{marginTop:"10px"}}><br/>
-
+      <div style={{ marginTop: "10px" }}>
+        <br />
       </div>
     </Container>
-    );
-  }
+  );
+}
