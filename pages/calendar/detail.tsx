@@ -17,7 +17,7 @@ import dayjs from "dayjs";
 
 export default function Demo({ data }: { data: string }) {
   const number = data.split("-")[1];
-  const dataKota = ["Jakarta", "Surabaya", "Gersik", "Jawa Timur"];
+  const dataKota = ["Jakarta", "Surabaya", "Gersik", "Jember"];
   const formatGoogleCalendarDateTime = (dateTime: string) => {
     const formattedDateTime = dateTime.replace(/[-: ]/g, "");
     return `${formattedDateTime}00`;
@@ -202,6 +202,7 @@ export default function Demo({ data }: { data: string }) {
                       width: "100px",
                       height: "45px",
                       borderRadius: "11px 11px 2px 2px",
+                      textAlign: "center",
                     }}
                   ></div>
                   <div
@@ -209,40 +210,60 @@ export default function Demo({ data }: { data: string }) {
                       width: "100px",
                       height: "45px",
                       borderRadius: "15px 15px 0 0",
-                      backgroundColor: "red",
+                      backgroundColor: "blue",
+                      textAlign: "center",
+                      fontSize:"14px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
-                    Jakarta
+                    JKT
                   </div>
                   <div
                     style={{
                       width: "100px",
                       height: "45px",
                       borderRadius: "15px 15px 0 0",
-                      backgroundColor: "red",
+                      backgroundColor: "blue",
+                      textAlign: "center",
+                      fontSize:"14px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
-                    Surabaya
+                    SBY
                   </div>
                   <div
                     style={{
                       width: "100px",
                       height: "45px",
                       borderRadius: "15px 15px 0 0",
-                      backgroundColor: "red",
+                      backgroundColor: "blue",
+                      textAlign: "center",
+                      fontSize:"14px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
-                    Gersik
+                    GSK
                   </div>
                   <div
                     style={{
                       width: "100px",
                       height: "45px",
                       borderRadius: "15px 15px 0 0",
-                      backgroundColor: "red",
+                      backgroundColor: "blue",
+                      textAlign: "center",
+                      fontSize:"14px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
-                    Jawa Timur
+                    JMR
                   </div>
                 </div>
                 <div style={{ display: "flex" }}>
@@ -250,7 +271,12 @@ export default function Demo({ data }: { data: string }) {
                     style={{
                       width: "100px",
                       height: "45px",
-                      backgroundColor: "red",
+                      backgroundColor: "#240A34",
+                      textAlign: "center",
+                      fontSize:"13px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
                     Imsak
@@ -261,7 +287,12 @@ export default function Demo({ data }: { data: string }) {
                         cursor: "pointer",
                         width: "100px",
                         height: "45px",
-                        backgroundColor: "red",
+                        backgroundColor: "#436850",
+                        textAlign: "center",
+                        fontSize:"13px",
+                        color:"white",
+                        fontWeight: "bold",
+                        paddingTop: "10px",
                       }}
                       onClick={() => {
                         handleClick(
@@ -297,7 +328,12 @@ export default function Demo({ data }: { data: string }) {
                     style={{
                       width: "100px",
                       height: "45px",
-                      backgroundColor: "red",
+                      backgroundColor: "#240A34",
+                      textAlign: "center",
+                      fontSize:"13px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
                     Subuh
@@ -308,7 +344,12 @@ export default function Demo({ data }: { data: string }) {
                         cursor: "pointer",
                         width: "100px",
                         height: "45px",
-                        backgroundColor: "red",
+                        backgroundColor: "#436850",
+                        textAlign: "center",
+                        fontSize:"13px",
+                        color:"white",
+                        fontWeight: "bold",
+                        paddingTop: "10px",
                       }}
                       onClick={() => {
                         handleClick(
@@ -344,7 +385,12 @@ export default function Demo({ data }: { data: string }) {
                     style={{
                       width: "100px",
                       height: "45px",
-                      backgroundColor: "red",
+                      backgroundColor: "#240A34",
+                      textAlign: "center",
+                      fontSize:"13px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
                     Dzuhur
@@ -355,7 +401,12 @@ export default function Demo({ data }: { data: string }) {
                         cursor: "pointer",
                         width: "100px",
                         height: "45px",
-                        backgroundColor: "red",
+                        backgroundColor: "#436850",
+                        textAlign: "center",
+                        fontSize:"13px",
+                        color:"white",
+                        fontWeight: "bold",
+                        paddingTop: "10px",
                       }}
                       onClick={() => {
                         handleClick(
@@ -391,7 +442,12 @@ export default function Demo({ data }: { data: string }) {
                     style={{
                       width: "100px",
                       height: "45px",
-                      backgroundColor: "red",
+                      backgroundColor: "#240A34",
+                      textAlign: "center",
+                      fontSize:"13px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
                     Ashar
@@ -402,7 +458,13 @@ export default function Demo({ data }: { data: string }) {
                         cursor: "pointer",
                         width: "100px",
                         height: "45px",
-                        backgroundColor: "red",
+                        backgroundColor: "#436850",
+                        textAlign: "center",
+                        fontSize:"13px",
+                        color:"white",
+                        fontWeight: "bold",
+                        paddingTop: "15px",
+                        borderStyle: "doted",
                       }}
                       onClick={() => {
                         handleClick(
@@ -438,7 +500,12 @@ export default function Demo({ data }: { data: string }) {
                     style={{
                       width: "100px",
                       height: "45px",
-                      backgroundColor: "red",
+                      backgroundColor: "#240A34",
+                      textAlign: "center",
+                      fontSize:"10px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
                     Maghrib
@@ -449,7 +516,12 @@ export default function Demo({ data }: { data: string }) {
                         cursor: "pointer",
                         width: "100px",
                         height: "45px",
-                        backgroundColor: "red",
+                        backgroundColor: "#436850",
+                        textAlign: "center",
+                        fontSize:"13px",
+                        color:"white",
+                        fontWeight: "bold",
+                        paddingTop: "15px",
                       }}
                       onClick={() => {
                         handleClick(
@@ -485,8 +557,13 @@ export default function Demo({ data }: { data: string }) {
                     style={{
                       width: "100px",
                       height: "45px",
-                      backgroundColor: "red",
-                      borderRadius: "0 0 15px 15px ",
+                      backgroundColor: "#240A34",
+                      borderRadius: "0 0 15px 15px",
+                      textAlign: "center",
+                      fontSize:"12px",
+                      color:"white",
+                      fontWeight: "bold",
+                      paddingTop: "10px",
                     }}
                   >
                     Isya
@@ -497,8 +574,14 @@ export default function Demo({ data }: { data: string }) {
                         cursor: "pointer",
                         width: "100px",
                         height: "45px",
-                        backgroundColor: "red",
+                        backgroundColor: "#436850",
                         borderRadius: "0 0 15px 15px ",
+                        textAlign: "center",
+                        fontSize:"13px",
+                        color:"white",
+                        fontWeight: "bold",
+                        paddingTop: "15px",
+
                       }}
                       onClick={() => {
                         handleClick(

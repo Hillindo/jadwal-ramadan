@@ -22,7 +22,7 @@ export default function Page(){
                         Gresik
                     </Box>
                     <Box ta="center" w="10%" bg="red">
-                        Jawa Timur
+                        Jember
                     </Box>
                 </Flex>
             </Container>
