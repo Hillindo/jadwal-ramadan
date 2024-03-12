@@ -158,7 +158,7 @@ export default function Page() {
               {" "}
               Petrokimia
             </Text>
-            <a href="www.petrokimia-gresik.com">
+            <a href="https://petrokimia-gresik.com">
               <Image
                 fit="contain"
                 w={{ base: "20px", xl: "30px" }}
@@ -166,7 +166,7 @@ export default function Page() {
                 src="/browser.png"
               />
             </a>
-            <a href="www.petrokimia-gresik.com">
+            <a href="https://petrokimia-gresik.com">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 {" "}
                 www.petrokimia-gresik.com

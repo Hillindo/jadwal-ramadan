@@ -641,10 +641,10 @@ export default function Demo({ data }: { data: string }) {
               {" "}
               Petrokimia
             </Text>
-            <a href="www.petrokimia-gresik.com">
+            <a href="https://petrokimia-gresik.com">
               <Image fit="contain" w="30px" ml="15px" src="/browser.png" />
             </a>
-            <a href="www.petrokimia-gresik.com">
+            <a href="https://petrokimia-gresik.com">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 {" "}
                 www.petrokimia-gresik.com{" "}
