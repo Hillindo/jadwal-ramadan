@@ -9,6 +9,7 @@ import {
   Flex,
   rem,
   Paper,
+  BackgroundImage,
 } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
@@ -36,7 +37,8 @@ export default function Page() {
     route.push("https://petro.hillindo-digital.com/");
   };
   return (
-    <Container fluid bg="#005E6A">
+  <BackgroundImage src="/DJI_0968-after.jpg"> 
+    <Container fluid bg="#005E6A" opacity="86%">    
       <Container
         pos={{ base: "absolute", xl: "relative" }}
         pl={{ base: "10px", sm: "20px", xs: "lg" }}
@@ -231,5 +233,6 @@ export default function Page() {
         <br />
       </Container>
     </Container>
+  </BackgroundImage>
   );
 }
