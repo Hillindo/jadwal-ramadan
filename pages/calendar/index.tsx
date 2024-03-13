@@ -220,7 +220,7 @@ export default function Page() {
               <Image fit="contain" w={{xl:"24px", base:"20px"}} ml="15px" src="/twitter.png" />
             </a>
             <a href="https://twitter.com/petrogresik" target="_blank">
-              <Text ml="10px" mt={{base:"1px", xl:"2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
+              <Text ml="10px" mt={{base:"1px", xl:"0px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
                 petrogresik{" "}
               </Text>
             </a>
