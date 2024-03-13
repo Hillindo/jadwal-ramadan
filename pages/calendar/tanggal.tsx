@@ -38,15 +38,15 @@ export default function Home() {
           xs: "200px",
         }}
       >
-        <Grid pos="relative">
+        <Grid pos="relative" mr={{base:"11%", xl:"0%", lg:"0%"}}>
           {days.map((day, index) => (
             <Container
-              w={{ base: "45px", xl: "70px" }}
+              w={{ base: "40px", xl: "70px" }}
               style={{ height: "70px", cursor: "pointer" }}
               onClick={() => handleImageClick(day)}
             >
               <Image
-                fit="cover"
+                fit="contain"
                 w={{
                   base: "40px",
                   xl: "70px",

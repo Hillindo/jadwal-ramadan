@@ -136,7 +136,7 @@ export default function Demo({ data }: { data: string }) {
             fit="contain"
             mt={{ base: "5%", xl: "5%", lg: "3%" }}
             w={{ base: "30%", xl: "23%", md: "35%", lg: "20%", xs: "25%" }}
-            w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%" }}
+            // w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%" }}
             src="/bumn.png"
           />
           <Image
@@ -188,7 +188,7 @@ export default function Demo({ data }: { data: string }) {
               </Container>  */}
             <Container pb="10px" mt="10px">
               <Text ta="center" c="#FFD700">
-                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <br />
+                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <b>Sidoarjo</b>, <br />
                 (dan sekitarnya)
               </Text>
             </Container>
@@ -263,7 +263,7 @@ export default function Demo({ data }: { data: string }) {
                       paddingTop: "10px",
                     }}
                   >
-                    JMR
+                    SDA
                   </div>
                 </div>
                 <div style={{ display: "flex" }}>
@@ -639,7 +639,7 @@ export default function Demo({ data }: { data: string }) {
             </a>
             <Text ml="10px" mt="4px" c="white" ta="center">
               {" "}
-              Petrokimia
+              petrokimiagresik_official
             </Text>
             <a href="https://petrokimia-gresik.com">
               <Image fit="contain" w="30px" ml="15px" src="/browser.png" />
@@ -647,9 +647,17 @@ export default function Demo({ data }: { data: string }) {
             <a href="https://petrokimia-gresik.com">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 {" "}
-                www.petrokimia-gresik.com{" "}
+                petrokimia-gresik.com{" "}
               </Text>
             </a>
+            <a href="https://twitter.com/petrogresik"><Image fit="contain" w="28px" ml="15px" src="/twitter.png"/>
+            </a>
+            <a href="https://twitter.com/petrogresik">
+              <Text ml="10px" mt="5px" c="white" ta="center">
+                petrogresik{" "}
+              </Text>
+            </a>
+
           </Flex>
         </Container>
       </Flex>

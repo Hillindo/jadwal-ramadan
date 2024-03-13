@@ -124,8 +124,8 @@ async function fetchJemberData() {
   try {
     // Melakukan kedua panggilan API secara bersamaan
     const [response1, response2] = await Promise.all([
-      fetchData(`https://api.myquran.com/v2/sholat/jadwal/1607/2024/03`), // Jadwal Shalat Gresik Maret
-      fetchData(`https://api.myquran.com/v2/sholat/jadwal/1607/2024/04`), // Jadwal Shalat Gresik April
+      fetchData(`https://api.myquran.com/v2/sholat/jadwal/1624/2024/03`), // Jadwal Shalat Gresik Maret
+      fetchData(`https://api.myquran.com/v2/sholat/jadwal/1624/2024/04`), // Jadwal Shalat Gresik April
     ]);
 
     // Menggabungkan hasil kedua panggilan API menjadi satu objek

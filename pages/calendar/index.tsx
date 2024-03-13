@@ -57,7 +57,7 @@ export default function Page() {
           <Image
             fit="contain"
             mt={{ base: "0%", xl: "5%" }}
-            w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%" }}
+            w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%"}}
             src="/Petrokimia.png"
           />
           <Image
@@ -96,7 +96,7 @@ export default function Page() {
             <Text
               c="#FFD700"
               ta="left"
-              ml={{ base: "25%", lg: "30%", xl: "30%" }}
+              ml={{ base: "25%", lg: "30%", xl: "25%" }}
               fw={700}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -106,7 +106,7 @@ export default function Page() {
               pt={{ xl: "2%", base: "0%", lg: "2%" }}
               c="#FFD700"
               ta="left"
-              ml={{ base: "27%", lg: "30%", xl: "32%" }}
+              ml={{ base: "27%", lg: "30%", xl: "28%" }}
               fw={300}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -129,7 +129,7 @@ export default function Page() {
                 c="#FFD700"
                 fz={{ xl: "21px", base: "15px" }}
               >
-                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <br />
+                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>,<b>Sidoarjo</b> <br />
                 (dan sekitarnya)
               </Text>
               <Time />
@@ -169,7 +169,14 @@ export default function Page() {
             <a href="https://petrokimia-gresik.com">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 {" "}
-                www.petrokimia-gresik.com
+                petrokimia-gresik.com
+              </Text>
+            </a>
+            <a href="https://twitter.com/petrogresik"><Image fit="contain" w="28px" ml="15px" src="/twitter.png"/>
+            </a>
+            <a href="https://twitter.com/petrogresik">
+              <Text ml="10px" mt="5px" c="white" ta="center">
+                petrogresik{" "}
               </Text>
             </a>
           </Flex>
