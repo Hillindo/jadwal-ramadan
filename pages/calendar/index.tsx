@@ -10,8 +10,10 @@ import {
   rem,
   Paper,
 } from "@mantine/core";
+import { Carousel } from "@mantine/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import Time from "./tanggal";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Router, useRouter } from "next/router";
 // import cx from 'clsx';
 
@@ -28,6 +30,7 @@ import { Router, useRouter } from "next/router";
 // });
 
 export default function Page() {
+  const autoplay = useRef(Autoplay({ delay: 2000 }));
   const route = useRouter();
   const handleClick = () => {
     route.push("https://petro.hillindo-digital.com/");
@@ -82,14 +85,42 @@ export default function Page() {
             pt={{ xl: "5px", lg: "0px" }}
             ml={{ xl: "55%", base: "15%" }}
             pb="10px"
-            w={{ xl: "50%", md: "50%", xs: "10%", sm: "10%", lg: "20%" }}
+            w={{ xl: "80%", md: "80%", xs: "10%", sm: "10%", lg: "20%" }}
           >
-            <Image
-              fit="contain"
-              mt={{ base: "40%", xl: "20%" }}
-              w={{ lg: "400%", xl: "120%", base: "80%" }}
-              src="/masjid_petrokimia.webp"
-            />
+            <Carousel
+              loop
+              withIndicators
+              height={300}
+              plugins={[autoplay.current]}
+              onMouseEnter={autoplay.current.stop}
+              onMouseLeave={autoplay.current.reset}
+            >
+              <Carousel.Slide>
+                <Image
+                  fit="contain"
+                  // mt={{ base: "40%", xl: "20%" }}
+                  // w={{ lg: "400%", xl: "120%", base: "80%" }}
+                  src="/masjid_petrokimia.webp"
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image
+                  fit="contain"
+                  // mt={{ base: "40%", xl: "20%" }}
+                  // w={{ lg: "400%", xl: "120%", base: "80%" }}
+                  src="/masjid_petrokimia.webp"
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image
+                  fit="contain"
+                  // mt={{ base: "40%", xl: "20%" }}
+                  // w={{ lg: "400%", xl: "120%", base: "80%" }}
+                  src="/masjid_petrokimia.webp"
+                />
+              </Carousel.Slide>
+              {/* ...other slides */}
+            </Carousel>
           </Container>
           {/* <Container mt="10px" ml={{xl:"50%", base:"0%"}} mr={{xl:"0%", lg:"30%", base:"0%"}}>
                 <Text c="#FFD700" ta="center" fw={300} fz={{base:"12pt", xl:"18pt", lg:"20pt"}} ml={{base:"0%",lg:"40%", xl:"0%"}}>

@@ -14,8 +14,14 @@ import {
 } from "@mantine/core";
 import { fetchDataCombined } from "./api";
 import dayjs from "dayjs";
+import { useRouter } from "next/router";
 
 export default function Demo({ data }: { data: string }) {
+  const route = useRouter();
+
+  const handleClickThis = () => {
+    route.push("https://petro.hillindo-digital.com/");
+  };
   const number = data.split("-")[1];
   const dataKota = ["Jakarta", "Surabaya", "Gersik", "Jember"];
   const formatGoogleCalendarDateTime = (dateTime: string) => {
@@ -133,6 +139,7 @@ export default function Demo({ data }: { data: string }) {
           }}
         >
           <Image
+            onClick={handleClickThis}
             fit="contain"
             mt={{ base: "5%", xl: "5%", lg: "3%" }}
             w={{ base: "30%", xl: "23%", md: "35%", lg: "20%", xs: "25%" }}
@@ -140,12 +147,14 @@ export default function Demo({ data }: { data: string }) {
             src="/bumn.png"
           />
           <Image
+            onClick={handleClickThis}
             fit="contain"
             mt={{ base: "5%", xl: "5%", lg: "3%" }}
             w={{ base: "30%", xl: "23%", md: "35%", lg: "20%", xs: "25%" }}
             src="/Petrokimia.png"
           />
           <Image
+            onClick={handleClickThis}
             fit="contain"
             mt={{ base: "5%", xl: "5%", lg: "3%" }}
             w={{ base: "30%", xl: "23%", md: "35%", lg: "20%", xs: "25%" }}
@@ -188,7 +197,8 @@ export default function Demo({ data }: { data: string }) {
               </Container>  */}
             <Container pb="10px" mt="10px">
               <Text ta="center" c="#FFD700">
-                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <b>Sidoarjo</b>, <br />
+                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <b>Sidoarjo</b>,{" "}
+                <br />
                 (dan sekitarnya)
               </Text>
             </Container>
@@ -212,8 +222,8 @@ export default function Demo({ data }: { data: string }) {
                       borderRadius: "15px 15px 0 0",
                       backgroundColor: "blue",
                       textAlign: "center",
-                      fontSize:"14px",
-                      color:"white",
+                      fontSize: "14px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -227,8 +237,8 @@ export default function Demo({ data }: { data: string }) {
                       borderRadius: "15px 15px 0 0",
                       backgroundColor: "blue",
                       textAlign: "center",
-                      fontSize:"14px",
-                      color:"white",
+                      fontSize: "14px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -242,8 +252,8 @@ export default function Demo({ data }: { data: string }) {
                       borderRadius: "15px 15px 0 0",
                       backgroundColor: "blue",
                       textAlign: "center",
-                      fontSize:"14px",
-                      color:"white",
+                      fontSize: "14px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -257,8 +267,8 @@ export default function Demo({ data }: { data: string }) {
                       borderRadius: "15px 15px 0 0",
                       backgroundColor: "blue",
                       textAlign: "center",
-                      fontSize:"14px",
-                      color:"white",
+                      fontSize: "14px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -273,8 +283,8 @@ export default function Demo({ data }: { data: string }) {
                       height: "45px",
                       backgroundColor: "#240A34",
                       textAlign: "center",
-                      fontSize:"13px",
-                      color:"white",
+                      fontSize: "13px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -289,8 +299,8 @@ export default function Demo({ data }: { data: string }) {
                         height: "45px",
                         backgroundColor: "#436850",
                         textAlign: "center",
-                        fontSize:"13px",
-                        color:"white",
+                        fontSize: "13px",
+                        color: "white",
                         fontWeight: "bold",
                         paddingTop: "10px",
                       }}
@@ -330,8 +340,8 @@ export default function Demo({ data }: { data: string }) {
                       height: "45px",
                       backgroundColor: "#240A34",
                       textAlign: "center",
-                      fontSize:"13px",
-                      color:"white",
+                      fontSize: "13px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -346,8 +356,8 @@ export default function Demo({ data }: { data: string }) {
                         height: "45px",
                         backgroundColor: "#436850",
                         textAlign: "center",
-                        fontSize:"13px",
-                        color:"white",
+                        fontSize: "13px",
+                        color: "white",
                         fontWeight: "bold",
                         paddingTop: "10px",
                       }}
@@ -387,8 +397,8 @@ export default function Demo({ data }: { data: string }) {
                       height: "45px",
                       backgroundColor: "#240A34",
                       textAlign: "center",
-                      fontSize:"13px",
-                      color:"white",
+                      fontSize: "13px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -403,8 +413,8 @@ export default function Demo({ data }: { data: string }) {
                         height: "45px",
                         backgroundColor: "#436850",
                         textAlign: "center",
-                        fontSize:"13px",
-                        color:"white",
+                        fontSize: "13px",
+                        color: "white",
                         fontWeight: "bold",
                         paddingTop: "10px",
                       }}
@@ -444,8 +454,8 @@ export default function Demo({ data }: { data: string }) {
                       height: "45px",
                       backgroundColor: "#240A34",
                       textAlign: "center",
-                      fontSize:"13px",
-                      color:"white",
+                      fontSize: "13px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -460,8 +470,8 @@ export default function Demo({ data }: { data: string }) {
                         height: "45px",
                         backgroundColor: "#436850",
                         textAlign: "center",
-                        fontSize:"13px",
-                        color:"white",
+                        fontSize: "13px",
+                        color: "white",
                         fontWeight: "bold",
                         paddingTop: "15px",
                         borderStyle: "doted",
@@ -502,8 +512,8 @@ export default function Demo({ data }: { data: string }) {
                       height: "45px",
                       backgroundColor: "#240A34",
                       textAlign: "center",
-                      fontSize:"10px",
-                      color:"white",
+                      fontSize: "10px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -518,8 +528,8 @@ export default function Demo({ data }: { data: string }) {
                         height: "45px",
                         backgroundColor: "#436850",
                         textAlign: "center",
-                        fontSize:"13px",
-                        color:"white",
+                        fontSize: "13px",
+                        color: "white",
                         fontWeight: "bold",
                         paddingTop: "15px",
                       }}
@@ -560,8 +570,8 @@ export default function Demo({ data }: { data: string }) {
                       backgroundColor: "#240A34",
                       borderRadius: "0 0 15px 15px",
                       textAlign: "center",
-                      fontSize:"12px",
-                      color:"white",
+                      fontSize: "12px",
+                      color: "white",
                       fontWeight: "bold",
                       paddingTop: "10px",
                     }}
@@ -577,11 +587,10 @@ export default function Demo({ data }: { data: string }) {
                         backgroundColor: "#436850",
                         borderRadius: "0 0 15px 15px ",
                         textAlign: "center",
-                        fontSize:"13px",
-                        color:"white",
+                        fontSize: "13px",
+                        color: "white",
                         fontWeight: "bold",
                         paddingTop: "15px",
-
                       }}
                       onClick={() => {
                         handleClick(
@@ -650,14 +659,14 @@ export default function Demo({ data }: { data: string }) {
                 petrokimia-gresik.com{" "}
               </Text>
             </a>
-            <a href="https://twitter.com/petrogresik"><Image fit="contain" w="28px" ml="15px" src="/twitter.png"/>
+            <a href="https://twitter.com/petrogresik">
+              <Image fit="contain" w="28px" ml="15px" src="/twitter.png" />
             </a>
             <a href="https://twitter.com/petrogresik">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 petrogresik{" "}
               </Text>
             </a>
-
           </Flex>
         </Container>
       </Flex>
