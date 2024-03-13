@@ -16,11 +16,12 @@ import { fetchDataCombined } from "./api";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 
-export default function Demo({ data }: { data: string }) {
+export default function Demo({ data, setModal }: any) {
   const route = useRouter();
 
   const handleClickThis = () => {
-    route.push("https://petro.hillindo-digital.com/");
+    setModal(false);
+    // route.push("https://petro.hillindo-digital.com/");
   };
   const number = data.split("-")[1];
   const dataKota = ["Jakarta", "Surabaya", "Gersik", "Jember"];

@@ -19,7 +19,6 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState([]);
   const handleImageClick = (days: []) => {
-
     setSelectedImage(days);
     setModalOpen(true);
   };
@@ -38,7 +37,7 @@ export default function Home() {
           xs: "200px",
         }}
       >
-        <Grid pos="relative" mr={{base:"11%", xl:"0%", lg:"0%"}}>
+        <Grid pos="relative" mr={{ base: "11%", xl: "0%", lg: "0%" }}>
           {days.map((day, index) => (
             <Container
               w={{ base: "40px", xl: "70px" }}
@@ -71,7 +70,7 @@ export default function Home() {
         bg="green"
         xOffset="0px"
       >
-        <Detail data={selectedImage} />
+        <Detail data={selectedImage} setModal={setModalOpen} />
         {/* Isi modal dengan gambar yang lebih besar atau informasi tambahan */}
         {/* {selectedImage && (
           <img src={`/day-image/${selectedImage}.webp`} alt={selectedImage} style={{ maxWidth: '100%', maxHeight: '100%' }} />
