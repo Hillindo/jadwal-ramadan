@@ -12,6 +12,7 @@ import {
 } from "@mantine/core";
 import Time from "./tanggal";
 import { useState } from "react";
+import { Router, useRouter } from "next/router";
 // import cx from 'clsx';
 
 // import { createTheme, MantineProvider } from '@mantine/core';
@@ -27,6 +28,10 @@ import { useState } from "react";
 // });
 
 export default function Page() {
+  const route = useRouter();
+  const handleClick = () => {
+    route.push("https://petro.hillindo-digital.com/");
+  };
   return (
     <Container fluid bg="#005E6A">
       <Container
@@ -49,18 +54,21 @@ export default function Page() {
           }}
         >
           <Image
+            onClick={handleClick}
             fit="contain"
             mt={{ base: "0%", xl: "5%" }}
             w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%" }}
             src="/bumn.png"
           />
           <Image
+            onClick={handleClick}
             fit="contain"
             mt={{ base: "0%", xl: "5%" }}
-            w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%"}}
+            w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%" }}
             src="/Petrokimia.png"
           />
           <Image
+            onClick={handleClick}
             fit="contain"
             mt={{ base: "0%", xl: "5%" }}
             w={{ base: "30%", xl: "25%", md: "35%", lg: "20%", xs: "25%" }}
@@ -129,7 +137,8 @@ export default function Page() {
                 c="#FFD700"
                 fz={{ xl: "21px", base: "15px" }}
               >
-                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>,<b>Sidoarjo</b> <br />
+                Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>,<b>Sidoarjo</b>{" "}
+                <br />
                 (dan sekitarnya)
               </Text>
               <Time />
@@ -145,7 +154,10 @@ export default function Page() {
       >
         <Container w="100%" mt={{ xl: "4%" }}>
           <Flex direction="row" justify="center">
-            <a href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr">
+            <a
+              href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr"
+              target="_blank"
+            >
               <Image
                 fit="contain"
                 w={{ base: "20px", xl: "30px" }}
@@ -158,7 +170,7 @@ export default function Page() {
               {" "}
               Petrokimia
             </Text>
-            <a href="https://petrokimia-gresik.com">
+            <a href="https://petrokimia-gresik.com" target="_blank">
               <Image
                 fit="contain"
                 w={{ base: "20px", xl: "30px" }}
@@ -166,15 +178,16 @@ export default function Page() {
                 src="/browser.png"
               />
             </a>
-            <a href="https://petrokimia-gresik.com">
+            <a href="https://petrokimia-gresik.com" target="_blank">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 {" "}
                 petrokimia-gresik.com
               </Text>
             </a>
-            <a href="https://twitter.com/petrogresik"><Image fit="contain" w="28px" ml="15px" src="/twitter.png"/>
+            <a href="https://twitter.com/petrogresik" target="_blank">
+              <Image fit="contain" w="28px" ml="15px" src="/twitter.png" />
             </a>
-            <a href="https://twitter.com/petrogresik">
+            <a href="https://twitter.com/petrogresik" target="_blank">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 petrogresik{" "}
               </Text>
