@@ -82,18 +82,19 @@ export default function Page() {
       <Grid pt={{ base: "2px", md: "100px", xl: "20px", lg: "180px" }}>
         <Grid.Col span={{ base: 12, xl: 4, md: 6 }}>
           <Container
-            pt={{ xl: "5px", lg: "0px" }}
-            ml={{ xl: "55%", base: "15%" }}
+            pt={{ xl: "70px", lg: "0px", base:"40%" }}
+            ml={{ xl: "55%", base: "11%" }}
             pb="10px"
-            w={{ xl: "80%", md: "80%", xs: "10%", sm: "10%", lg: "20%" }}
+            w={{ base:"80%", xl: "80%", md: "80%", xs: "10%", sm: "10%", lg: "20%" }}
           >
             <Carousel
               loop
-              withIndicators
+              // withIndicators
               height={300}
               plugins={[autoplay.current]}
               onMouseEnter={autoplay.current.stop}
               onMouseLeave={autoplay.current.reset}
+              withControls={false}
             >
               <Carousel.Slide>
                 <Image
@@ -128,14 +129,14 @@ export default function Page() {
                 </Text>
               </Container> */}
           <Container
-            mt="40px"
+            mt={{xl:"40px", lg:"40px", base:"-55px"}}
             ml={{ xl: "35%", lg: "0%", base: "0%" }}
             w="100%"
           >
             <Text
               c="#FFD700"
               ta="left"
-              ml={{ base: "25%", lg: "30%", xl: "25%" }}
+              ml={{ base: "25%", lg: "30%", xl: "40%" }}
               fw={700}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -145,7 +146,7 @@ export default function Page() {
               pt={{ xl: "2%", base: "0%", lg: "2%" }}
               c="#FFD700"
               ta="left"
-              ml={{ base: "27%", lg: "30%", xl: "28%" }}
+              ml={{ base: "27%", lg: "30%", xl: "43%" }}
               fw={300}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -197,9 +198,9 @@ export default function Page() {
                 src="/instagram.png"
               />
             </a>
-            <Text ml="10px" mt="4px" c="white" ta="center">
-              {" "}
-              Petrokimia
+            <Text ml="10px" mt={{base:"-6px", xl:"2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
+              petrokimiagresik
+              _official
             </Text>
             <a href="https://petrokimia-gresik.com" target="_blank">
               <Image
@@ -210,16 +211,16 @@ export default function Page() {
               />
             </a>
             <a href="https://petrokimia-gresik.com" target="_blank">
-              <Text ml="10px" mt="5px" c="white" ta="center">
+              <Text ml="10px" mt={{base:"-5px", xl:"2px"}} c="white" ta="center" fz={{base:"8pt", xl:"12pt"}}>
                 {" "}
                 petrokimia-gresik.com
               </Text>
             </a>
             <a href="https://twitter.com/petrogresik" target="_blank">
-              <Image fit="contain" w="28px" ml="15px" src="/twitter.png" />
+              <Image fit="contain" w={{xl:"24px", base:"20px"}} ml="15px" src="/twitter.png" />
             </a>
             <a href="https://twitter.com/petrogresik" target="_blank">
-              <Text ml="10px" mt="5px" c="white" ta="center">
+              <Text ml="10px" mt={{base:"1px", xl:"2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
                 petrogresik{" "}
               </Text>
             </a>

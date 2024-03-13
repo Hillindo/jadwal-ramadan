@@ -648,26 +648,27 @@ export default function Demo({ data, setModal }: any) {
               target="_blank"
               href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr"
             >
-              <Image fit="contain" w="30px" c="white" src="/instagram.png" />
+              <Image fit="contain" w={{xl:"26px", base:"14px"}} c="white" src="/instagram.png" />
             </a>
-            <Text ml="10px" mt="4px" c="white" ta="center">
+            <Text ml="10px" mt={{xl:"0px", base:"-10px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
               {" "}
-              petrokimiagresik_official
+              petrokimiagresik
+              _official
             </Text>
             <a target="_blank" href="https://petrokimia-gresik.com">
-              <Image fit="contain" w="30px" ml="15px" src="/browser.png" />
+              <Image fit="contain" w={{xl:"26px", base:"14px"}} ml="15px" src="/browser.png" />
             </a>
             <a target="_blank" href="https://petrokimia-gresik.com">
-              <Text ml="10px" mt="5px" c="white" ta="center">
+              <Text ml="10px" mt={{xl:"0px", base:"-10px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
                 {" "}
                 petrokimia-gresik.com{" "}
               </Text>
             </a>
             <a target="_blank" href="https://twitter.com/petrogresik">
-              <Image fit="contain" w="28px" ml="15px" src="/twitter.png" />
+              <Image fit="contain" w={{xl:"26px", base:"14px"}} ml="15px" src="/twitter.png" />
             </a>
             <a target="_blank" href="https://twitter.com/petrogresik">
-              <Text ml="10px" mt="5px" c="white" ta="center">
+              <Text ml="10px" mt={{xl:"0px", base:"-2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
                 petrogresik{" "}
               </Text>
             </a>
