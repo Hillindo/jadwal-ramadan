@@ -643,26 +643,29 @@ export default function Demo({ data }: { data: string }) {
       >
         <Container w="100%">
           <Flex direction="row">
-            <a href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr"
+            >
               <Image fit="contain" w="30px" c="white" src="/instagram.png" />
             </a>
             <Text ml="10px" mt="4px" c="white" ta="center">
               {" "}
               petrokimiagresik_official
             </Text>
-            <a href="https://petrokimia-gresik.com">
+            <a target="_blank" href="https://petrokimia-gresik.com">
               <Image fit="contain" w="30px" ml="15px" src="/browser.png" />
             </a>
-            <a href="https://petrokimia-gresik.com">
+            <a target="_blank" href="https://petrokimia-gresik.com">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 {" "}
                 petrokimia-gresik.com{" "}
               </Text>
             </a>
-            <a href="https://twitter.com/petrogresik">
+            <a target="_blank" href="https://twitter.com/petrogresik">
               <Image fit="contain" w="28px" ml="15px" src="/twitter.png" />
             </a>
-            <a href="https://twitter.com/petrogresik">
+            <a target="_blank" href="https://twitter.com/petrogresik">
               <Text ml="10px" mt="5px" c="white" ta="center">
                 petrogresik{" "}
               </Text>
