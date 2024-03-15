@@ -122,7 +122,7 @@ export default function Demo({ data, setModal }: any) {
   const selectedScheduleImage =
     scheduleImage[Math.min(Math.max(page - 1, 0), scheduleImage.length - 1)];
   return (
-  <BackgroundImage src="/background1.png" pr={{xl:"4%", lg:"1%", base:"0%"}} w={{xl:"100%"}}>
+  <BackgroundImage src="/background3.png" pr={{xl:"4%", lg:"1%", base:"0%"}} w={{xl:"100%"}}>
       <Container bg={{xl:"transparent",lg:"transparent", base:"#005E6A"}} w={{lg:"80%", xl:"100%"}}>
             <Container
               pos="relative"
@@ -182,7 +182,7 @@ export default function Demo({ data, setModal }: any) {
                 </Grid.Col>
                 {/* Menggeser Gambar Waktu Shalat */}
                 <Grid.Col span={{ xl: 5, lg: 6, base: 12 }} ml={{xl:"80%", lg:"70%", base:"0%"}}>
-                  <Container ml={{ xl: "22%", lg: "5%", base: "5%" }} w="100%">
+                  <Container ml={{ xl: "22%", lg: "10%", base: "5%" }} w="100%">
                     <Image
                       w={{ xl: "80%", lg: "75%", base: "95%" }}
                       src={selectedDayImage}

@@ -37,8 +37,8 @@ export default function Page() {
     route.push("https://petro.hillindo-digital.com/");
   };
   return (
-  <BackgroundImage src="/DJI_0968-after.jpg"> 
-    <Container fluid bg="#005E6A" opacity="86%">    
+  // <BackgroundImage src="/DJI_0968-after.jpg"> 
+    <Container fluid style={{backgroundImage:"linear-gradient(rgba(0, 94, 106, 0.6),rgba(0, 94, 106, 0.6)),url(/DJI_0968-after.jpg)", backgroundSize:"cover", backgroundPosition:"center"}}>    
       <Container
         pos={{ base: "absolute", xl: "relative" }}
         pl={{ base: "10px", sm: "20px", xs: "lg" }}
@@ -233,6 +233,6 @@ export default function Page() {
         <br />
       </Container>
     </Container>
-  </BackgroundImage>
+  // </BackgroundImage>
   );
 }
