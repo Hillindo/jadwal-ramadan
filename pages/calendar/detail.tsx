@@ -122,8 +122,8 @@ export default function Demo({ data, setModal }: any) {
   const selectedScheduleImage =
     scheduleImage[Math.min(Math.max(page - 1, 0), scheduleImage.length - 1)];
   return (
-  <BackgroundImage src="/background4.png" pr={{xl:"1%", lg:"1%", base:"0%"}}>
-      <Container bg={{xl:"transparent", base:"#005E6A"}} fluid size="responsive">
+  <BackgroundImage src="/background5.png" pr={{xl:"4%", lg:"1%", base:"0%"}}>
+      <Container bg={{xl:"transparent", base:"#005E6A"}} fluid>
             <Container
               pos="relative"
               ml={{ xl: "30%", lg: "25%", base: "10%" }}
@@ -167,8 +167,8 @@ export default function Demo({ data, setModal }: any) {
             </Container>
             <Container w="100%">
               
-              <Grid pt="20px">
-                <Grid.Col span={{ xl: 6, lg: 6, base: 12 }}>
+              <Grid pt="20px" mr={{xl:"0%", lg:"0%", base:"0%"}}>
+                <Grid.Col span={{ xl: 5, lg: 6, base: 12 }}>
                   <Container
                     mt={{ xl: "30%", lg: "30%", base: "5%" }}
                     mr={{ xl: "20%", lg: "20%" }}
@@ -180,7 +180,7 @@ export default function Demo({ data, setModal }: any) {
                     /> */}
                   </Container>
                 </Grid.Col>
-                <Grid.Col span={{ xl: 6, lg: 6, base: 12 }} ml={{xl:"80%"}}>
+                <Grid.Col span={{ xl: 7, lg: 6, base: 12 }} ml={{xl:"75%", lg:"75%", base:"0%"}}>
                   <Container ml={{ xl: "17%", lg: "15%", base: "5%" }}>
                     <Image
                       w={{ xl: "80%", lg: "75%", base: "95%" }}
@@ -206,7 +206,7 @@ export default function Demo({ data, setModal }: any) {
                       (dan sekitarnya)
                     </Text>
                   </Container>
-                  <Container mt="10px">
+                  <Container mt={{xl:"10%", base:"10px", lg:"10px"}}>
                     <Flex justify="center" direction={"column"}>
                       <div
                         style={{ display: "flex", borderBottom: "3px solid yellow" }}
