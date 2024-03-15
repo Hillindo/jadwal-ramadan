@@ -630,7 +630,7 @@ export default function Demo({ data, setModal }: any) {
                     </Flex>
                   </Container>
                   <Container mt="5%">
-                    <Text c="#FFD700" ta="center">
+                    <Text c={{xl:"#040303", base:"#FFD700"}} ta="center" fw={500}>
                       Sumber: SIHAT/KEMENAG (Kementerian Agama RI) <br />
                       <br />
                       Petrokimia Gresik mengucapkan selamat menjalankan ibadah puasa

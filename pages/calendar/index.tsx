@@ -87,7 +87,7 @@ export default function Page() {
             pt={{ xl: "70px", lg: "0px", base:"40%" }}
             ml={{ xl: "55%", base: "11%" }}
             pb="10px"
-            w={{ base:"80%", xl: "80%", md: "80%", xs: "10%", sm: "10%", lg: "20%" }}
+            w={{ base:"80%", xl: "80%", md: "80%", xs: "10%", sm: "10%", lg: "80%" }}
           >
             <Carousel
               loop
