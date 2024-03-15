@@ -122,8 +122,8 @@ export default function Demo({ data, setModal }: any) {
   const selectedScheduleImage =
     scheduleImage[Math.min(Math.max(page - 1, 0), scheduleImage.length - 1)];
   return (
-  <BackgroundImage src="/background5.png" pr={{xl:"4%", lg:"1%", base:"0%"}}>
-      <Container bg={{xl:"transparent", base:"#005E6A"}} fluid>
+  <BackgroundImage src="/background1.png" pr={{xl:"4%", lg:"1%", base:"0%"}} w={{xl:"100%"}}>
+      <Container bg={{xl:"transparent",lg:"transparent", base:"#005E6A"}} w={{lg:"80%", xl:"100%"}}>
             <Container
               pos="relative"
               ml={{ xl: "30%", lg: "25%", base: "10%" }}
@@ -168,7 +168,7 @@ export default function Demo({ data, setModal }: any) {
             <Container w="100%">
               
               <Grid pt="20px" mr={{xl:"0%", lg:"0%", base:"0%"}}>
-                <Grid.Col span={{ xl: 5, lg: 6, base: 12 }}>
+                <Grid.Col span={{ xl: 7, lg: 6, base: 12 }}>
                   <Container
                     mt={{ xl: "30%", lg: "30%", base: "5%" }}
                     mr={{ xl: "20%", lg: "20%" }}
@@ -180,8 +180,9 @@ export default function Demo({ data, setModal }: any) {
                     /> */}
                   </Container>
                 </Grid.Col>
-                <Grid.Col span={{ xl: 7, lg: 6, base: 12 }} ml={{xl:"75%", lg:"75%", base:"0%"}}>
-                  <Container ml={{ xl: "17%", lg: "15%", base: "5%" }}>
+                {/* Menggeser Gambar Waktu Shalat */}
+                <Grid.Col span={{ xl: 5, lg: 6, base: 12 }} ml={{xl:"80%", lg:"70%", base:"0%"}}>
+                  <Container ml={{ xl: "22%", lg: "5%", base: "5%" }} w="100%">
                     <Image
                       w={{ xl: "80%", lg: "75%", base: "95%" }}
                       src={selectedDayImage}
@@ -199,15 +200,16 @@ export default function Demo({ data, setModal }: any) {
                             </Group>
                         </Flex>        
                     </Container>  */}
-                  <Container pb="10px" mt="10px">
-                    <Text ta="center" c="#FFD700">
+                  <Container pb="10px" mt={{base:"10px", lg:"70px", xl:"10%"}} ml={{xl:"15%", lg:"-4%"}} w="100%">
+                    <Text ta="center" c="#FFD700" fz={{xl:"18px"}}>
                       Untuk Wilayah <b>Gresik</b>, <b>Surabaya</b>, <b>Sidoarjo</b>,{" "}
                       <br />
                       (dan sekitarnya)
                     </Text>
                   </Container>
-                  <Container mt={{xl:"10%", base:"10px", lg:"10px"}}>
-                    <Flex justify="center" direction={"column"}>
+                  {/* UP/Down Gambar Waktu Shalat */}
+                  <Container mt={{xl:"25%", base:"10px", lg:"10px"}} w="100%">
+                    <Flex justify="center" direction={"column"} w={{lg:"85%", xl:"130%"}}>
                       <div
                         style={{ display: "flex", borderBottom: "3px solid yellow" }}
                       >
@@ -629,8 +631,8 @@ export default function Demo({ data, setModal }: any) {
                       {/* <Image w="350px" src={selectedScheduleImage} /> */}
                     </Flex>
                   </Container>
-                  <Container mt="5%">
-                    <Text c={{xl:"#040303", base:"#FFD700"}} ta="center" fw={500}>
+                  <Container mt="5%" w="100%" ml={{xl:"15%", lg:"-7%"}}>
+                    <Text c={{xl:"#040303",lg:"#040303", base:"#FFD700"}} ta="center" fz="12pt" fw={500}>
                       Sumber: SIHAT/KEMENAG (Kementerian Agama RI) <br />
                       <br />
                       Petrokimia Gresik mengucapkan selamat menjalankan ibadah puasa
@@ -651,27 +653,27 @@ export default function Demo({ data, setModal }: any) {
                   target="_blank"
                   href="https://www.instagram.com/petrokimiagresik_official?igsh=eGI5eHVscDhtNzJl&utm_source=qr"
                 >
-                  <Image fit="contain" w={{xl:"26px", base:"14px"}} c="white" src="/instagram.png" />
+                  <Image fit="contain" w={{xl:"26px", base:"14px",lg:"20px"}} c="white" src="/instagram.png" mb={{lg:"100%"}}/>
                 </a>
-                <Text ml="10px" mt={{xl:"0px", base:"-10px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
+                <Text ml="10px" mt={{xl:"0px", base:"-10px", lg:"-1px"}} c="white" ta="center" fz={{xl:"12pt",lg:"11pt", base:"8pt"}} fw={800}>
                   {" "}
                   petrokimiagresik
                   _official
                 </Text>
                 <a target="_blank" href="https://petrokimia-gresik.com">
-                  <Image fit="contain" w={{xl:"26px", base:"14px"}} ml="15px" src="/browser.png" />
+                  <Image fit="contain" w={{xl:"26px", base:"14px", lg:"20px"}} ml="15px" src="/browser.png" mb={{lg:"100%"}} />
                 </a>
                 <a target="_blank" href="https://petrokimia-gresik.com">
-                  <Text ml="10px" mt={{xl:"0px", base:"-10px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
+                  <Text ml="10px" mt={{xl:"0px", base:"-10px", lg:"-1%"}} c="white" ta="center" fz={{xl:"12pt",lg:"11pt", base:"8pt"}} fw={800}>
                     {" "}
                     petrokimia-gresik.com{" "}
                   </Text>
                 </a>
                 <a target="_blank" href="https://twitter.com/petrogresik">
-                  <Image fit="contain" w={{xl:"26px", base:"14px"}} ml="15px" src="/twitter.png" />
+                  <Image fit="contain" w={{xl:"26px", base:"14px", lg:"20px"}} ml="15px" src="/twitter.png" mb={{lg:"100%"}} />
                 </a>
                 <a target="_blank" href="https://twitter.com/petrogresik">
-                  <Text ml="10px" mt={{xl:"0px", base:"-2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
+                  <Text ml="10px" mt={{xl:"0px", base:"-2px", lg:"-1%"}} c="white" ta="center" fz={{xl:"12pt",lg:"11pt", base:"8pt"}} fw={800}>
                     petrogresik{" "}
                   </Text>
                 </a>

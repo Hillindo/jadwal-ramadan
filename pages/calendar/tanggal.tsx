@@ -25,13 +25,14 @@ export default function Home() {
   console.log(typeof days);
   //   const [opened, { open, close }] = useDisclosure(false);
   return (
-    <Container pos="static">
+    <Container pos="relative">
       <Flex
         justify="center"
         mt="40px"
         w={{
           base: "270px",
           xl: "450px",
+          lg: "115%",
           md: "280px",
           sm: "200px",
           xs: "200px",
@@ -40,6 +41,7 @@ export default function Home() {
         <Grid pos="relative" mr={{ base: "11%", xl: "0%", lg: "0%" }}>
           {days.map((day, index) => (
             <Container
+              ml={{lg:"2%"}}
               w={{ base: "40px", xl: "70px" }}
               style={{ height: "70px", cursor: "pointer" }}
               onClick={() => handleImageClick(day)}

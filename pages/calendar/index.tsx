@@ -81,7 +81,7 @@ export default function Page() {
           />
         </Flex>
       </Container>
-      <Grid pt={{ base: "2px", md: "100px", xl: "20px", lg: "180px" }}>
+      <Grid pt={{ base: "2px", xl: "20px", lg: "180px" }}>
         <Grid.Col span={{ base: 12, xl: 4, md: 6 }}>
           <Container
             pt={{ xl: "70px", lg: "0px", base:"40%" }}
@@ -138,7 +138,7 @@ export default function Page() {
             <Text
               c="#FFD700"
               ta="left"
-              ml={{ base: "25%", lg: "10%", xl: "38%", md:"10%" }}
+              ml={{ base: "25%", lg: "33%", xl: "38%", md:"10%" }}
               fw={700}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -148,7 +148,7 @@ export default function Page() {
               pt={{ xl: "2%", base: "0%", lg: "2%" }}
               c="#FFD700"
               ta="left"
-              ml={{ base: "27%", lg: "10%", xl: "41%", md:"10%" }}
+              ml={{ base: "27%", lg: "34%", xl: "41%", md:"10%" }}
               fw={300}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -166,7 +166,7 @@ export default function Page() {
               w={{ xl: "100%", xs: "100%", lg: "50%" }}
             >
               <Text
-                ml={{ lg: "10%", xl: "3%", md:"10%" }}
+                ml={{ lg: "35%", xl: "3%", md:"10%" }}
                 ta="center"
                 c="#FFD700"
                 fz={{ xl: "21px", base: "15px" }}
@@ -200,7 +200,7 @@ export default function Page() {
                 src="/instagram.png"
               />
             </a>
-            <Text ml="10px" mt={{base:"-6px", xl:"2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
+            <Text ml="10px" mt={{base:"-6px", xl:"2px", lg:"2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
               petrokimiagresik
               _official
             </Text>
@@ -213,7 +213,7 @@ export default function Page() {
               />
             </a>
             <a href="https://petrokimia-gresik.com" target="_blank">
-              <Text ml="10px" mt={{base:"-5px", xl:"2px"}} c="white" ta="center" fz={{base:"8pt", xl:"12pt"}}>
+              <Text ml="10px" mt={{base:"-5px", xl:"2px", lg:"2px"}} c="white" ta="center" fz={{base:"8pt", xl:"12pt"}}>
                 {" "}
                 petrokimia-gresik.com
               </Text>
@@ -222,7 +222,7 @@ export default function Page() {
               <Image fit="contain" w={{xl:"24px", base:"20px"}} ml="15px" src="/twitter.png" />
             </a>
             <a href="https://twitter.com/petrogresik" target="_blank">
-              <Text ml="10px" mt={{base:"1px", xl:"0px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
+              <Text ml="10px" mt={{base:"1px", xl:"0px", lg:"2px"}} c="white" ta="center" fz={{xl:"12pt", base:"8pt"}}>
                 petrogresik{" "}
               </Text>
             </a>
