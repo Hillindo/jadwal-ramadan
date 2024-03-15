@@ -181,7 +181,7 @@ export default function Demo({ data, setModal }: any) {
                   </Container>
                 </Grid.Col>
                 {/* Menggeser Gambar Waktu Shalat */}
-                <Grid.Col span={{ xl: 5, lg: 6, base: 12 }} ml={{xl:"80%", lg:"65%", md:"50%", base:"0%"}}>
+                <Grid.Col span={{ xl: 5, lg: 6, base: 12 }} ml={{xl:"80%", lg:"65%", base:"0%"}}>
                   <Container ml={{ xl: "22%", lg: "10%", base: "5%" }} w="100%">
                     <Image
                       w={{ xl: "80%", lg: "75%", base: "95%" }}
@@ -208,7 +208,7 @@ export default function Demo({ data, setModal }: any) {
                     </Text>
                   </Container>
                   {/* UP/Down Gambar Waktu Shalat */}
-                  <Container mt={{xl:"25%", base:"10px", lg:"10px"}} w="100%">
+                  <Container mt={{xl:"25%", base:"10px", lg:"10px"}} ml={{xl:"-3%"}} w="100%">
                     <Flex justify="center" direction={"column"} w={{lg:"85%", xl:"130%"}}>
                       <div
                         style={{ display: "flex", borderBottom: "3px solid yellow" }}
