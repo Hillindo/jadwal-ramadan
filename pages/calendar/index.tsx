@@ -138,7 +138,7 @@ export default function Page() {
             <Text
               c="#FFD700"
               ta="left"
-              ml={{ base: "25%", lg: "30%", xl: "40%" }}
+              ml={{ base: "25%", lg: "20%", xl: "40%", md:"30%" }}
               fw={700}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -148,7 +148,7 @@ export default function Page() {
               pt={{ xl: "2%", base: "0%", lg: "2%" }}
               c="#FFD700"
               ta="left"
-              ml={{ base: "27%", lg: "30%", xl: "43%" }}
+              ml={{ base: "27%", lg: "20%", xl: "43%", md:"30%" }}
               fw={300}
               fz={{ xl: "28px", base: "19px", lg: "20pt" }}
             >
@@ -166,7 +166,7 @@ export default function Page() {
               w={{ xl: "100%", xs: "100%", lg: "50%" }}
             >
               <Text
-                ml={{ lg: "10%", xl: "3%" }}
+                ml={{ lg: "10%", xl: "3%", md:"10%" }}
                 ta="center"
                 c="#FFD700"
                 fz={{ xl: "21px", base: "15px" }}
